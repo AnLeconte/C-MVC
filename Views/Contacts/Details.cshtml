@@ -1,0 +1,12 @@
+﻿@model ExercicesMVC.Controllers.Contact
+
+<h1>@ViewBag.Title</h1>
+<p>@ViewData["Description"]</p>
+
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">Nom : @Model.Name</h5>
+        <p class="card-text">Email : @Model.Email</p>
+        <a asp-controller="Contacts" asp-action="Index" class="btn btn-secondary">Retour à la liste</a>
+    </div>
+</div>

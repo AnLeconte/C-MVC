@@ -1,0 +1,26 @@
+﻿@model List<ExercicesMVC.Controllers.Contact>
+
+<h1>@ViewBag.Title</h1>
+<p>@ViewData["Description"]</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(m => m[0].Name)</th>
+            <th>@Html.DisplayNameFor(m => m[0].Email)</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var contact in Model)
+        {
+                <tr>
+                    <td>@contact.Name</td>
+                    <td>@contact.Email</td>
+                    <td>
+                        <a asp-controller="Contacts" asp-action="Details" asp-route-id="@contact.Id" class="btn btn-primary">Détails</a>
+                    </td>
+                </tr>
+        }
+    </tbody>
+</table>
